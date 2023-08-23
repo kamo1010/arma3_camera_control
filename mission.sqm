@@ -8,11 +8,11 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=4;
+		nextID=21;
 	};
 	class Camera
 	{
-		pos[]={9203.5801,92.959106,20070.912};
+		pos[]={9202.9219,93.286758,20071.949};
 		dir[]={0.64739722,-0.17362754,-0.74211216};
 		up[]={0.11413962,0.98481143,-0.13083838};
 		aside[]={-0.75355762,-7.4505806e-009,-0.65738195};
@@ -20,11 +20,133 @@ class EditorData
 };
 binarizationWanted=0;
 sourceName="name";
+addons[]=
+{
+	"A3_Characters_F_Common",
+	"A3_Static_F_Sams_Radar_System_01"
+};
 class AddonsMetaData
 {
+	class List
+	{
+		items=2;
+		class Item0
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Static_F_Sams";
+			name="Arma 3 Sams - Turrets";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+	};
 };
 randomSeed=8555062;
 class ScenarioData
 {
 	author="groumirou";
+};
+class Mission
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogDecay=0.014;
+		forecastFogDecay=0.014;
+	};
+	class Entities
+	{
+		items=2;
+		class Item0
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={9310.0156,91.225655,20049.588};
+						angles[]={0.053282689,0,0.12861842};
+					};
+					side="West";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=6;
+					type="B_UAV_AI";
+					atlOffset=2.9575119;
+				};
+			};
+			class Attributes
+			{
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=1;
+				};
+				class Links
+				{
+					items=1;
+					class Item0
+					{
+						linkID=0;
+						item0=6;
+						item1=5;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=4;
+			atlOffset=9.1552734e-005;
+		};
+		class Item1
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9310.0156,91.224213,20049.537};
+				angles[]={0.053282689,0,0.12861842};
+			};
+			side="West";
+			flags=6;
+			class Attributes
+			{
+				reportRemoteTargets=1;
+				receiveRemoteTargets=1;
+				reportOwnPosition=1;
+				aiRadarUsage=1;
+			};
+			id=5;
+			type="B_Radar_System_01_F";
+			atlOffset=9.1552734e-005;
+		};
+	};
 };
