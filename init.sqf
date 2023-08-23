@@ -15,7 +15,35 @@ camera cameraEffect ["internal", "back"];
 camera camSetTarget veh; 
 camera camCommit 1;
 
-for "_d" from 0 to (5) do {
+for "_d" from 0 to (0) do {
+	d=_d; 
+	for "_ex" from 0 to (0) do { 
+		x=_ex;
+		for "_z" from 0 to (0) do {
+			sleep 2;
+			screenshot (["B_MBT_01_cannon_F__",str (d),"-",str (x),"-",str (_z),".png"] joinString "");
+			vehPos = getPos veh;
+			camPos = getPos camera;
+			_pvVector = [[(camPos select 0)-(vehPos select 0)], [(camPos select 1)-(vehPos select 1)], [(camPos select 2)-(vehPos select 2)]];
+			pos = zRotation matrixMultiply _pvVector;
+			camera camSetPos [((pos select 0) select 0)+(vehPos select 0), ((pos select 1) select 0)+(vehPos select 1), ((pos select 2) select 0)+(vehPos select 2)];
+			camera camCommit 1;
+		};
+		vehPos = getPos veh;
+		camPos = getPos camera;
+		_pvVector = [[(camPos select 0)-(vehPos select 0)], [(camPos select 1)-(vehPos select 1)], [(camPos select 2)-(vehPos select 2)]];
+		pos = yRotation matrixMultiply _pvVector;
+		camera camSetPos [((pos select 0) select 0)+(vehPos select 0), ((pos select 1) select 0)+(vehPos select 1), ((pos select 2) select 0)+(vehPos select 2)];
+		camera camCommit 1;
+	};
+	camPos = getPos camera;
+	camera camSetPos [(camPos select 0), (camPos select 1)+radius, (camPos select 2)];
+	camera camCommit 1;
+};
+
+// at night
+setDate [2013, 5, 15, 21, 45];
+for "_d" from 0 to (2) do {
 	d=_d; 
 	for "_ex" from 0 to (2) do { 
 		x=_ex;
